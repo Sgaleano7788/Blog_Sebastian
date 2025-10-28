@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Personal - Sebastián Galeano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+    <header>
+        <h1>Blog Personal</h1>
+        <p class="subtitle">Por: <strong>Sebastián Galeano</strong></p>
+        <button id="themeSwitcher">Cambiar Tema</button>
+    </header>
+
+    <main class="blog-container">
+
+        <!-- ENTRADA 1 -->
+        <article class="post">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900" alt="">
+            <h2>Mi Inicio en la Ingeniería Informática</h2>
+            <p>Todo comenzó con la curiosidad por entender cómo funciona la tecnología...</p>
+            <button class="readMore" data-target="modal1">Leer más</button>
+        </article>
+
+        <!-- ENTRADA 2 -->
+        <article class="post">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900" alt="">
+            <h2>Mi Camino en el Desarrollo Web</h2>
+            <p>El desarrollo web me permitió comprender la importancia de crear experiencias...</p>
+            <button class="readMore" data-target="modal2">Leer más</button>
+        </article>
+
+        <!-- ENTRADA 3 -->
+        <article class="post">
+            <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=900" alt="">
+            <h2>Metas a Futuro</h2>
+            <p>Mis aspiraciones están orientadas hacia la ciberseguridad y sistemas backend...</p>
+            <button class="readMore" data-target="modal3">Leer más</button>
+        </article>
+
+    </main>
+
+    <!-- MODALES (DETALLE DE ENTRADAS) -->
+    <section class="modal" id="modal1">
+        <div class="modal-content">
+            <h2>Mi Inicio en la Ingeniería Informática</h2>
+            <p>
+                Desde joven, siempre quise entender cómo funcionaban los computadores.
+                Estudiar Ingeniería Informática me ha permitido aprender sobre sistemas,
+                redes, programación y cómo crear soluciones reales que impactan.
+            </p>
+            <button class="close-modal">Cerrar</button>
+        </div>
+    </section>
+
+    <section class="modal" id="modal2">
+        <div class="modal-content">
+            <h2>Mi Camino en el Desarrollo Web</h2>
+            <p>
+                El desarrollo web me ha permitido combinar lógica y creatividad.
+                Diseñar interfaces y crear aplicaciones que otros pueden usar ha sido
+                una experiencia enriquecedora que continúa haciéndome crecer.
+            </p>
+            <button class="close-modal">Cerrar</button>
+        </div>
+    </section>
+
+    <section class="modal" id="modal3">
+        <div class="modal-content">
+            <h2>Metas a Futuro</h2>
+            <p>
+                Mi meta es especializarme en ciberseguridad, protección de datos y desarrollo backend.
+                Quiero contribuir al diseño de sistemas robustos y seguros para el mundo digital.
+            </p>
+            <button class="close-modal">Cerrar</button>
+        </div>
+    </section>
+
+    <script>
+        // Cambiar Tema
+        document.getElementById("themeSwitcher").onclick = () => {
+            document.body.classList.toggle("dark");
+        };
+
+        // Abrir Modal
+        document.querySelectorAll(".readMore").forEach(btn => {
+            btn.onclick = () => {
+                document.getElementById(btn.dataset.target).classList.add("active");
+            };
+        });
+
+        // Cerrar Modal
+        document.querySelectorAll(".close-modal").forEach(btn => {
+            btn.onclick = () => {
+                btn.parentElement.parentElement.classList.remove("active");
+            };
+        });
+    </script>
+
+</body>
+</html>
